@@ -1,13 +1,4 @@
 import streamlit as st
-import sys
-
-# Insira o caminho absoluto do módulo streamlit_option_menu
-sys.path.insert(1, r"C:\Users\Artur\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\streamlit_option_menu")
-
-from streamlit_option_menu import option_menu
-
-# Configurando a página
-st.set_page_config(layout="wide", page_icon="assets/icone.png")
 
 # Definindo as páginas
 pages = {
@@ -21,12 +12,10 @@ pages = {
 
 # Adicionando um título e texto na barra lateral    
 with st.sidebar:
-    st.logo("assets/loco.png")
-    selected = option_menu(
+    st.image("assets/loco.png")
+    selected = st.selectbox(
         "Distribuição de renda por:",
-        list(pages.keys()),
-        icons=[],
-        menu_icon="",
+        list(pages.keys())
     )
 
 st.markdown(
@@ -39,6 +28,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 # Executando a página selecionada
 page_path = pages[selected]
 with open(page_path, "r", encoding="utf-8") as file:
