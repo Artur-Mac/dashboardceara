@@ -1,4 +1,9 @@
 import streamlit as st
+import sys
+
+# Insira o caminho absoluto do módulo streamlit_option_menu
+sys.path.insert(1, "C:\Users\Artur\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\streamlit_option_menu\__init__.py")
+
 from streamlit_option_menu import option_menu
 
 # Configurando a página
