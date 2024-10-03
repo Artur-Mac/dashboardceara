@@ -12,22 +12,11 @@ pages = {
 
 # Adicionando um título e texto na barra lateral    
 with st.sidebar:
-    st.image("assets/loco.png")
     selected = st.selectbox(
         "Distribuição de renda por:",
         list(pages.keys())
     )
 
-st.markdown(
-    """
-    <style>
-    img[data-testid="stLogo"] {
-        height: 2.5rem;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 # Executando a página selecionada
 page_path = pages[selected]
